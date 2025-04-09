@@ -8,6 +8,7 @@ import WorksPage from './pages/WorksPage';
 function App() {
   return (
     <BrowserRouter>
+    <Header />
         <div className='app-container'>
             <main className='main-content'>
                 <Routes>
@@ -16,6 +17,7 @@ function App() {
                 </Routes>
             </main>
         </div>
+    <Footer />
     </BrowserRouter>
   );
 }
