@@ -32,9 +32,9 @@ function MainPage() {
                       <h2 className="text-4xl text-red-500 font-bold">課外活動</h2>
                       <p className="mt-6 text-gray-600 text-xl">高専や大学では積極的に課外活動をしていました</p>
                       <p className="text-gray-600 text-xl">その内容や受賞歴についてリンク先で紹介しています</p>
-                      <a>
+                      <Link to="/affiliations">
                           <button className="mt-4 bg-gray-200 text-gray-700 text-xl px-4 py-3 rounded transition duration-300 hover:bg-blue-500 hover:text-white">課外活動歴一覧を見る</button>
-                      </a>
+                      </Link>
                   </div>
               </div>
           </div>
