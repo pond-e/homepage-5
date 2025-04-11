@@ -24,12 +24,12 @@ function Header() {
                     </div>
                     <nav className="hidden md:flex space-x-8">
                         <Link to="/works" className="text-xl text-gray-600 hover:text-red-500">作成物</Link>
-                        <a href="#" className="text-xl text-gray-600 hover:text-red-500">記事</a>
+                        <Link to="/articles" className="text-xl text-gray-600 hover:text-red-500">記事</Link>
                     </nav>
                     <div id="mobile-menu" style={{ display: mobileMenuFlag ? "" : "none"}} className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-10">
                         <div className="px-4 py-4 flex flex-col space-y-4">
                             <Link to="/works" className="block text-xl text-gray-600 hover:text-red-500">作成物</Link>
-                            <a href="#" className="block text-xl text-gray-600 hover:text-red-500">記事</a>
+                            <Link to="/articles" className="block text-xl text-gray-600 hover:text-red-500">記事</Link>
                         </div>
                     </div>
                 </div>

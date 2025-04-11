@@ -20,9 +20,9 @@ function MainPage() {
                   <div>
                       <h2 className="text-4xl text-red-500 font-bold">記事</h2>
                       <p className="mt-6 text-gray-600 text-xl">QiitaやZennに技術記事の投稿をしています</p>
-                      <a>
+                      <Link to="/articles">
                           <button className="mt-4 bg-gray-200 text-gray-700 text-xl px-4 py-3 rounded transition duration-300 hover:bg-blue-500 hover:text-white">記事一覧を見る</button>
-                      </a>
+                      </Link>
                   </div>
                   <div className="w-48 h-48"><img className="blog-icon" src="./images/website_blog.png" alt="blog icon" /></div>
               </div>
