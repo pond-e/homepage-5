@@ -52,3 +52,10 @@ export default tseslint.config({
   },
 })
 ```
+## 起動方法
+`npm run dev`
+
+## build
+`npx tsc -b && npx vite build`
+
+dist directory に出力される
