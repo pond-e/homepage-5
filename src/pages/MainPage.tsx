@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'; // Link コンポーネントをインポート
+import HeroView from './HeroView';
 
 
 function MainPage() {
   return (
     <>
+      <HeroView />
       <main className="container mx-auto px-4 py-8 flex justify-center">
           <div className="grid grid-cols-1 gap-8">
               <div className="flex items-center space-x-4">
