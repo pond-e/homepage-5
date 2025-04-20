@@ -15,13 +15,13 @@ interface ArticleCardProps {
 
 export function ArticleCard({ id, title, excerpt, category, date, readTime, image, link }: ArticleCardProps) {
   return (
-    <Card className="flex flex-col h-full">
+    <Card className="flex flex-col h-full pt-0">
       <CardHeader className="p-0">
         <div className="relative h-48 w-full">
-          <img src={image || "/placeholder.svg"} alt={title} className="object-cover rounded-t-lg" />
+          <img src={image || "/placeholder.svg"} alt={title} className="object-cover object-center h-full w-full rounded-t-lg" />
         </div>
       </CardHeader>
-      <CardContent className="flex-grow pt-6">
+      <CardContent className="flex-grow">
         <Badge className="mb-2">{category}</Badge>
         <h2 className="text-xl font-bold mb-2">
           <Link to={link} className="hover:underline">
