@@ -3,8 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import MainPage from './pages/MainPage';
 import WorksPage from './pages/WorksPage';
-// import ArticlesPage from './pages/ArticlesPage';
-import ArticlesPage from './page';
+import ArticlesPage from './pages/ArticlesPage';
 import AffiliationsPage from './pages/AffiliationsPage';
 import "./globals.css";
 
