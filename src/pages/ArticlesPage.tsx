@@ -1,4 +1,5 @@
 import { Search } from "lucide-react"
+import { useState } from "react"
 
 import { Button } from "../../components/ui/button"
 import { Input } from "../../components/ui/input"
@@ -55,7 +56,7 @@ export default function ArticlesPage() {
       category: "組み込み",
       date: "2024年10月25日",
       readTime: "10分",
-      image: "https://pbs.twimg.com/card_img/1912499402239012865/uMLoaeFf?format=jpg&name=small",
+      image: "./images/tempet_1.png",
       link: "https://elchika.com/article/f071bcac-4171-43c5-ac84-83035b03fcfb/"
     },
     {
@@ -85,6 +86,18 @@ export default function ArticlesPage() {
   // カテゴリー一覧
   const categories = ["すべて", "組み込み", "Web", "日記", "学校"]
 
+  // 検索とフィルタリングの状態管理
+  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("すべて")
+
+  // 記事のフィルタリング
+  const filteredArticles = articles.filter((article) => {
+    const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         article.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+    const matchesCategory = selectedCategory === "すべて" || article.category === selectedCategory
+    return matchesSearch && matchesCategory
+  })
+
   return (
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-3xl font-bold mb-8">記事一覧</h1>
@@ -93,13 +106,23 @@ export default function ArticlesPage() {
         <div className="w-full md:w-2/3">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
-            <Input placeholder="記事を検索..." className="pl-10" />
+            <Input 
+              placeholder="記事を検索..." 
+              className="pl-10" 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
 
         <div className="w-full md:w-1/3 flex flex-wrap gap-2">
           {categories.map((category) => (
-            <Button key={category} variant={category === "すべて" ? "default" : "outline"} size="sm">
+            <Button 
+              key={category} 
+              variant={category === selectedCategory ? "default" : "outline"} 
+              size="sm"
+              onClick={() => setSelectedCategory(category)}
+            >
               {category}
             </Button>
           ))}
@@ -107,7 +130,7 @@ export default function ArticlesPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        {articles.map((article) => (
+        {filteredArticles.map((article) => (
           <ArticleCard
             key={article.id}
             id={article.id}
@@ -121,6 +144,12 @@ export default function ArticlesPage() {
           />
         ))}
       </div>
+
+      {filteredArticles.length === 0 && (
+        <div className="text-center py-8">
+          <p className="text-muted-foreground">検索条件に一致する記事が見つかりませんでした。</p>
+        </div>
+      )}
 
       <Pagination>
         <PaginationContent>
