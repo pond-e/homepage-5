@@ -69,7 +69,7 @@ const worksData: WorkData[] = [
         description: "画像に橋梁が映っているかどうか2値判定を行います。Microsoft Lobe を用いてニューラルネットワークのモデルの学習、デプロイを行いました。",
         imageSrc: "./images/bridge_website2.png",
         imageAlt: "bridge_website2.png",
-        link: "#",
+        link: "https://pond-e.github.io/bridge_detection_demo/",
     },
     {
         id: 13,
