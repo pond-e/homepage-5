@@ -37,7 +37,7 @@ const worksData: WorkData[] = [
         description: "足圧センサーを用いたスマートインソール",
         imageSrc: "./images/RAINNER_1.png",
         imageAlt: "RAINNER_1.png",
-        link: "#",
+        link: "https://youtu.be/qkNFEmacde0?si=0OV_ul2WX5n7RflY&t=23",
     },
     {
         id: 3,
@@ -77,7 +77,7 @@ const worksData: WorkData[] = [
         description: "NSE, ARLISS, 種子島ロケットコンテスト フルサクセス 敢闘賞",
         imageSrc: "./images/cansat2024_2.jpg",
         imageAlt: "cansat2024_2.jpg",
-        link: "#",
+        link: "http://www.jaxa-rocket-contest.jp/past/2025/",
     },
     {
         id: 7,
