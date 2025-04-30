@@ -81,6 +81,17 @@ export default function ArticlesPage() {
       image: "./images/hatena-blog.png",
       link: "https://roki-ars.hatenablog.com/entry/2024/07/19/113147?_gl=1*hz3df9*_gcl_au*MzYwOTU3MjEuMTc0Mjg4NTE3Ng"
     },
+    {
+      id: 7,
+      title: "部費を活用して技術力をアップしよう！",
+      excerpt:
+        "2024年3月に某進学高専を卒業予定のPondです。僕は高専生活で部費を色々使わせてもらって楽しい技術活動をしていたので、その記録と部費をうまく使用した質のいい技術、ものづ...",
+      category: "学校",
+      date: "2024年2月28日",
+      readTime: "5分",
+      image: "./images/note_logo.webp",
+      link: "https://note.com/pond6814/n/n3f08bed1ea48"
+    },
   ]
 
   // カテゴリー一覧
@@ -89,6 +100,8 @@ export default function ArticlesPage() {
   // 検索とフィルタリングの状態管理
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("すべて")
+  const [currentPage, setCurrentPage] = useState(1)
+  const articlesPerPage = 6
 
   // 記事のフィルタリング
   const filteredArticles = articles.filter((article) => {
@@ -97,6 +110,30 @@ export default function ArticlesPage() {
     const matchesCategory = selectedCategory === "すべて" || article.category === selectedCategory
     return matchesSearch && matchesCategory
   })
+
+  // ページネーションの計算
+  const totalPages = Math.ceil(filteredArticles.length / articlesPerPage)
+  const startIndex = (currentPage - 1) * articlesPerPage
+  const endIndex = startIndex + articlesPerPage
+  const currentArticles = filteredArticles.slice(startIndex, endIndex)
+
+  // ページ変更時の処理
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+    // ページトップにスクロール
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // 検索やカテゴリー変更時にページをリセット
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value)
+    setCurrentPage(1)
+  }
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category)
+    setCurrentPage(1)
+  }
 
   return (
     <div className="container mx-auto py-8 px-4">
@@ -110,7 +147,7 @@ export default function ArticlesPage() {
               placeholder="記事を検索..." 
               className="pl-10" 
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={handleSearchChange}
             />
           </div>
         </div>
@@ -121,7 +158,7 @@ export default function ArticlesPage() {
               key={category} 
               variant={category === selectedCategory ? "default" : "outline"} 
               size="sm"
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategoryChange(category)}
             >
               {category}
             </Button>
@@ -130,7 +167,7 @@ export default function ArticlesPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        {filteredArticles.map((article) => (
+        {currentArticles.map((article) => (
           <ArticleCard
             key={article.id}
             id={article.id}
@@ -151,27 +188,46 @@ export default function ArticlesPage() {
         </div>
       )}
 
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" isActive>
-              1
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">2</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">3</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext href="#" />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
+      {filteredArticles.length > 0 && (
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious 
+                href="#" 
+                onClick={(e) => {
+                  e.preventDefault()
+                  if (currentPage > 1) handlePageChange(currentPage - 1)
+                }}
+                className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
+              />
+            </PaginationItem>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <PaginationItem key={page}>
+                <PaginationLink 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handlePageChange(page)
+                  }}
+                  isActive={currentPage === page}
+                >
+                  {page}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+            <PaginationItem>
+              <PaginationNext 
+                href="#" 
+                onClick={(e) => {
+                  e.preventDefault()
+                  if (currentPage < totalPages) handlePageChange(currentPage + 1)
+                }}
+                className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      )}
     </div>
   )
 }
