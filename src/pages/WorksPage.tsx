@@ -141,7 +141,7 @@ const worksData: WorkData[] = [
         description: "ELF ファイルの情報を取得するツール",
         imageSrc: "./images/ReadELF_1.png",
         imageAlt: "ReadELF_1.png",
-        link: "#",
+        link: "https://github.com/pond-e/color-readelf",
     },    
     {
         id: 18,
@@ -149,7 +149,7 @@ const worksData: WorkData[] = [
         description: "JavaScript を難読化するツール",
         imageSrc: "./images/JS_Obfuscator_1.png",
         imageAlt: "JS_Obfuscator_1.png",
-        link: "#",
+        link: "https://github.com/pond-e/ObfuLiteralJS",
     },
     {
         id: 8,
