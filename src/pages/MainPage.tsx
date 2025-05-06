@@ -12,7 +12,7 @@ function MainPage() {
             <HeroView />
             <main className="container mx-auto px-4 py-8 flex justify-center">
                 <div className="grid grid-cols-1 gap-8">
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 py-20">
                         <div className="w-48 h-48"><img className="smc" src="./images/computer_single_board.png" alt="computer_single_board.png" /></div>
                         <div>
                             <h2 className="ml-4 text-3xl text-red-500 font-bold">作成物</h2>
@@ -22,7 +22,7 @@ function MainPage() {
                             </Link>
                         </div>
                     </div>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 py-20">
                         <div>
                             <h2 className="text-3xl text-red-500 font-bold">記事</h2>
                             <p className="mt-6 text-gray-600 text-base">QiitaやZennに技術記事の投稿をしています</p>
@@ -32,7 +32,7 @@ function MainPage() {
                         </div>
                         <div className="w-48 h-48"><img className="blog-icon" src="./images/website_blog.png" alt="blog icon" /></div>
                     </div>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 py-20">
                         <div className="w-48 h-48"><img className="icon" src="./images/icon-ink.svg" alt="icon" /></div>
                         <div>
                             <h2 className="text-3xl text-red-500 font-bold">課外活動</h2>
