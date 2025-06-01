@@ -24,7 +24,7 @@ const HeroView = () => {
     return (
         <div>
             <div
-                className="bg-[url(./images/pond1.png)] bg-fixed bg-center mx-auto rounded-t-[100px]"
+                className="bg-[url(./images/pond3.png)] bg-fixed bg-center mx-auto rounded-t-[100px]"
                 style={{
                     width: elementWidth,
                     height: '1700px',
@@ -38,7 +38,7 @@ const HeroView = () => {
                         Deeplearning
                     </p>
                 </div>
-                <div className='pt-[100px] md:pl-[200px] text-white font-bold'>
+                <div className='pt-[100px] md:pl-[200px] text-black font-bold'>
                     <p className='inline text-2xl'>
                         幅広く
                         <br></br>
@@ -47,7 +47,7 @@ const HeroView = () => {
                         ものづくりをしています。
                     </p>
                 </div>
-                <div className='pt-[100px] md:pl-[200px] text-white font-bold'>
+                <div className='pt-[100px] md:pl-[200px] text-black font-bold'>
                     <p className='inline text-2xl'>
                         2024年に筑波大学へ編入しました。
                         <br></br>
@@ -58,7 +58,7 @@ const HeroView = () => {
                         CanSatを開発しました。
                     </p>
                 </div>
-                <div className='pt-[100px] md:pl-[200px] text-white font-bold'>
+                <div className='pt-[100px] md:pl-[200px] text-black font-bold'>
                     <p className='inline text-2xl'>
                         明石高専出身で
                         <br></br>
@@ -67,7 +67,7 @@ const HeroView = () => {
                         Unity、高専DCONなど色々な活動をしました。
                     </p>
                 </div>
-                <div className='pt-[100px] md:pl-[200px] text-white font-bold'>
+                <div className='pt-[100px] md:pl-[200px] text-black font-bold'>
                     <p className='inline text-2xl'>
                         その過程で得た技術をもとに
                         <br></br>
