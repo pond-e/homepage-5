@@ -1,27 +1,36 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import MainPage from './pages/MainPage';
-import WorksPage from './pages/WorksPage';
-import ArticlesPage from './pages/ArticlesPage';
-
-function App() {
- return (
-  <BrowserRouter>
-   <div className="app-container">
-    <Header />
-    <main className="main-content">
-     <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/works" element={<WorksPage />} />
-      <Route path="/articles" element={<ArticlesPage />} />
-     </Routes>
-    </main>
-    <Footer />
-   </div>
-  </BrowserRouter>
- );
-}
-
-export default App;
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課外活動</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 flex  justify-center">
+    <div class="bg-white shadow-md rounded-lg p-6 max-w-md w-full">
+        <h1 class="text-2xl font-bold mb-4">課外活動</h1>
+        <div class="border-t border-gray-300 mt-4 pt-4">
+            <h2 class="text-lg font-semibold mb-2">受賞歴</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li>あああ</li>
+                <li>bbb</li>
+                <li>ccc</li>
+            </ul>
+        </div>
+        <div class="border-t border-gray-300 mt-4 pt-4">
+            <h2 class="text-lg font-semibold mb-2">所属歴</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                <li>あああ</li>
+                <li>bbb</li>
+                <li>ccc</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
