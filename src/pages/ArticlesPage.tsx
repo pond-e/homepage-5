@@ -17,6 +17,26 @@ export default function ArticlesPage() {
   // 記事データのモック
   const articles = [
     {
+      id: 9,
+      title: "2025年1月から5月までの進捗",
+      excerpt: "3月末まで 種子島ロケットコンテスト CanSat部門 おそらく、現役最後の CanSat の大会で良い結果を残せるように Ca...",
+      category: "日記",
+      date: "2025年5月25日",
+      readTime: "10分",
+      image: "./images/hatena-blog.png",
+      link: "https://roki-ars.hatenablog.com/entry/2025/05/25/130322?_gl=1*1szusg*_gcl_au*MzYwOTU3MjEuMTc0Mjg4NTE3Ng.."
+    },
+    {
+      id: 8,
+      title: "【色変記事】AtCoderで入緑しました！",
+      excerpt: "ABC391で入緑したのでどれくらい精進したかや何を考えていたかを記事にしてみようと思います。レート推移レート推移はこんな感じでした。茶色の瓦が4枚になったのが2024/6/8で入緑したのが20…",
+      category: "競プロ",
+      date: "2025年5月19日",
+      readTime: "3分",
+      image: "https://iframely.net/hUf93cb2/thumbnail?maxwidth=960",
+      link: "https://qiita.com/pond-e/items/863e8f49447f1d10bda0"
+    },
+    {
       id: 1,
       title: "ラズパイで3軸加速度センサー (AE-ADXL367) を使う方法",
       excerpt: "ラズパイで3軸加速度センサー (AE-ADXL367) を使う方法 · 目次 · 販売リンク、データシート · 開発環境 · ラズパイへの接続方法 · I2Cの有効化 · コードを ...",
